@@ -8,6 +8,7 @@ html {
 
 .scoreboard {
     display: flex;
+    flex-direction: column; /* default to column */
     height: 100%;
 }
 
@@ -44,6 +45,16 @@ html {
     flex-direction: column;
     gap: 20px;
     z-index: 10;
+}
+
+/* If the width is greater than the height */
+@media (min-aspect-ratio: 1/1) {
+    .scoreboard {
+        flex-direction: row; /* switch to row */
+    }
+    .controls {
+        flex-direction: row; /* adjust controls as needed */
+    }
 }
 
 .button {
